@@ -1,0 +1,143 @@
+/* Design tokens — Renewable Energy Desk · Net Plus module
+   Dark is the primary theme (matches the existing desk); light is a full
+   second theme, selected via <html data-theme>. */
+
+:root {
+  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  --r-xs: 6px;
+  --r-sm: 8px;
+  --r: 12px;
+  --r-lg: 16px;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --topbar-h: 60px;
+  --tabs-h: 64px;
+  --sidebar-w: 288px;
+}
+
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #05070a;
+  --bg-elev: #080b10;
+  --panel: #0c1117;
+  --panel-2: #111820;
+  --panel-3: #17202a;
+  --panel-glass: rgba(12, 17, 23, 0.72);
+
+  --line: rgba(150, 172, 200, 0.1);
+  --line-2: rgba(150, 172, 200, 0.16);
+  --line-3: rgba(150, 172, 200, 0.26);
+
+  --ink: #e9eef5;
+  --ink-2: #a6b3c3;
+  --ink-3: #6f7d8f;
+  --ink-4: #465263;
+
+  /* module accent — solar amber */
+  --accent: #f2b33d;
+  --accent-2: #ffd27a;
+  --accent-ink: #1c1303;
+  --accent-text: #f5c056;
+  --accent-soft: rgba(242, 179, 61, 0.1);
+  --accent-soft-2: rgba(242, 179, 61, 0.05);
+  --accent-line: rgba(242, 179, 61, 0.42);
+  --accent-glow: 0 0 0 1px rgba(242, 179, 61, 0.28), 0 0 28px -6px rgba(242, 179, 61, 0.45);
+
+  /* aggregate (single-series) chart colour */
+  --agg: #f2b33d;
+  --agg-wash: rgba(242, 179, 61, 0.14);
+
+  /* status — fixed, never used as a series colour */
+  --good: #22b35a;
+  --warning: #fab219;
+  --serious: #ec835a;
+  --critical: #e05252;
+  --warning-soft: rgba(236, 131, 90, 0.12);
+
+  /* chart chrome */
+  --grid: #18202a;
+  --axis: #2a3441;
+  --tick: #6f7d8f;
+
+  /* branch identity — categorical slots 1–7, dark steps (validated on #0d1218) */
+  --b1: #3987e5;
+  --b2: #d95926;
+  --b3: #199e70;
+  --b4: #c98500;
+  --b5: #d55181;
+  --b6: #008300;
+  --b7: #9085e9;
+
+  --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.035) inset, 0 18px 40px -24px rgba(0, 0, 0, 0.9);
+  --shadow-pop: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 24px 60px -12px rgba(0, 0, 0, 0.75), 0 0 0 1px var(--line-2);
+  --dot: rgba(150, 172, 200, 0.07);
+  --glow-a: rgba(242, 179, 61, 0.07);
+  --glow-b: rgba(57, 135, 229, 0.06);
+  --skeleton: rgba(150, 172, 200, 0.07);
+  --skeleton-hi: rgba(150, 172, 200, 0.14);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #eef1f5;
+  --bg-elev: #ffffff;
+  --panel: #ffffff;
+  --panel-2: #f5f7fa;
+  --panel-3: #edf1f5;
+  --panel-glass: rgba(255, 255, 255, 0.78);
+
+  --line: rgba(15, 30, 55, 0.08);
+  --line-2: rgba(15, 30, 55, 0.13);
+  --line-3: rgba(15, 30, 55, 0.22);
+
+  --ink: #0d1726;
+  --ink-2: #445366;
+  --ink-3: #6a778a;
+  --ink-4: #a0aab8;
+
+  --accent: #d99312;
+  --accent-2: #b87800;
+  --accent-ink: #1c1303;
+  --accent-text: #9a6300;
+  --accent-soft: rgba(217, 147, 18, 0.11);
+  --accent-soft-2: rgba(217, 147, 18, 0.055);
+  --accent-line: rgba(217, 147, 18, 0.5);
+  --accent-glow: 0 0 0 1px rgba(217, 147, 18, 0.35), 0 8px 24px -10px rgba(217, 147, 18, 0.45);
+
+  --agg: #d99312;
+  --agg-wash: rgba(217, 147, 18, 0.14);
+
+  --good: #0f8a3c;
+  --warning: #c98a00;
+  --serious: #d2632f;
+  --critical: #c83434;
+  --warning-soft: rgba(210, 99, 47, 0.1);
+
+  --grid: #e9edf2;
+  --axis: #cfd6df;
+  --tick: #6a778a;
+
+  /* light steps of the same seven hues (validated on #ffffff) */
+  --b1: #2a78d6;
+  --b2: #eb6834;
+  --b3: #1baf7a;
+  --b4: #eda100;
+  --b5: #e87ba4;
+  --b6: #008300;
+  --b7: #4a3aa7;
+
+  --shadow-card: 0 1px 2px rgba(15, 30, 55, 0.05), 0 12px 32px -20px rgba(15, 30, 55, 0.25);
+  --shadow-pop: 0 20px 50px -12px rgba(15, 30, 55, 0.28), 0 0 0 1px var(--line-2);
+  --dot: rgba(15, 30, 55, 0.06);
+  --glow-a: rgba(217, 147, 18, 0.08);
+  --glow-b: rgba(42, 120, 214, 0.06);
+  --skeleton: rgba(15, 30, 55, 0.06);
+  --skeleton-hi: rgba(15, 30, 55, 0.11);
+}

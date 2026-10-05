@@ -1,0 +1,45 @@
+{
+  "name": "netplus-customer-portal",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n db,api,web -c yellow,cyan,magenta --kill-others-on-fail \"npm:dev:db\" \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:db": "node scripts/pg-local.mjs",
+    "dev:api": "tsx watch --clear-screen=false server/index.ts",
+    "dev:web": "vite",
+    "db:seed": "node scripts/db-seed.mjs",
+    "build": "tsc -p tsconfig.json && tsc -p server/tsconfig.json && vite build",
+    "start": "tsx server/index.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@tanstack/react-virtual": "^3.14.13",
+    "express": "^5.2.1",
+    "lucide-react": "^1.49.0",
+    "pg": "^8.23.0",
+    "pg-copy-streams": "^7.0.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-is": "^19.2.0",
+    "recharts": "^2.15.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.3",
+    "@types/pg": "^8.23.1",
+    "@types/pg-copy-streams": "^1.2.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "embedded-postgres": "^18.4.0-beta.17",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1"
+  },
+  "overrides": {
+    "react-is": "$react-is"
+  }
+}

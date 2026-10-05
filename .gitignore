@@ -1,0 +1,5 @@
+node_modules
+dist
+.env
+# local development PostgreSQL cluster (npm run dev:db)
+.pgdata
